@@ -44,7 +44,7 @@ end
 
 execute "bundle" do
   command "bundle install --deployment --binstubs; " +
-    "bundle exec rake graphiti:metrics"
+    "bin/rake graphiti:metrics"
 
   user "www-data"
   group "www-data"
@@ -55,7 +55,7 @@ end
 
 cron "graphiti:metrics" do
   minute "*/15"
-  command "cd #{node.graphiti.base} && /var/lib/gems/1.9.1/bin/bundle exec rake graphiti:metrics"
+  command "cd #{node.graphiti.base} && bin/rake graphiti:metrics"
   user "www-data"
 end
 
