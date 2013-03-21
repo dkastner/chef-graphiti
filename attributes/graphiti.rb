@@ -10,6 +10,7 @@ default.graphiti.unicorn.timeout = 60
 default.graphiti.unicorn.cow_friendly = true
 default.graphiti.s3_bucket = "graphiti"
 default.graphiti.port = 8081
+default.graphiti.settings = {}
 
 default.graphiti.default_options = {
   "title" => "New Graph",

@@ -90,7 +90,7 @@ template File.join(node.graphiti.base, "config", "settings.yml") do
     "metric_prefix" => node.graphiti.metric_prefix,
     "default_options" => node.graphiti.default_options.to_hash,
     "default_metrics" => node.graphiti.default_metrics.to_a,
-  }
+  }.merge(node.graphiti.settings)
   notifies :restart, "service[graphiti]"
 end
 
